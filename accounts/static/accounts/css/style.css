@@ -1,0 +1,11 @@
+.login, .signup{
+    padding-top: 100px;
+    text-align: center;
+}
+.error, .errorlist{
+    color: red;
+    border: 2px solid red;
+    margin-top: 12px;
+    padding: 5px;
+    border-radius: 20px;
+}

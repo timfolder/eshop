@@ -1,0 +1,39 @@
+{% load static %}
+<nav class = "menu">
+<div class = 'container menu-content'>
+    <ul>
+        <li>
+            <img src="{% static 'images/chairlogo.png' %}" alt="logo">
+        </li>
+        <li>
+            <a href="{% url 'home' %}">Home</a>
+        </li>
+        <li>
+            <a href="{% url 'gallery' %}">Shop</a>
+        </li>
+        <li>
+            <a href="">Cart</a>
+        </li>
+        {% if request.user.is_authenticated %}
+            <li>
+                <a href="{%url 'chaireation'%}">CREATE</a>
+            </li>
+        {% endif %}
+    </ul>
+    <ul>
+        {% if not request.user.is_authenticated %}
+        <li>
+            <a href={% url 'signup' %}>Sign up</a>
+        </li>
+        <li>
+            <a href={% url 'login' %}>Log in</a>
+        </li>
+        {% else %}
+        <li>
+            <a href={% url 'logout' %}>Log out</a>
+        </li>
+        {% endif %}
+        
+    </ul>
+</div>
+</nav>

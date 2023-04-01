@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}gallery{% endblock title %}
+{% block links %}
+<link rel="stylesheet" href="{% static 'chairitems/css/style.css' %}">
+{% endblock links %}
+{% block content %}
+<div class = 'gallery container'>
+    {% for chair in chairs%}
+    {% include 'card.html' %}
+    {% endfor %}
+</div>
+
+
+{% endblock content %}
+
+
+

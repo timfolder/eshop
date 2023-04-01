@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}log in{% endblock title %}
+{% block links %}
+<link rel="stylesheet" href="{% static 'accounts/css/style.css' %}">
+{% endblock links %}
+{% block content %}
+<div class = "login">
+    <h1>ENTER YOUR ACCOUNT</h1>
+    <form method = "POST">
+        {% csrf_token %}
+        <input type="text" placeholder="type your username" name="username">
+        <input type="password" placeholder="type your password" name="password">
+        <button>SUBMIT</button>
+        {% if messages %}
+            {% for i in messages %}
+                <p class = 'error'>
+                    {{i}}
+                </p>
+            {% endfor %}
+        {% endif %}
+    </form>
+</div>
+
+{% endblock content %}
+
+

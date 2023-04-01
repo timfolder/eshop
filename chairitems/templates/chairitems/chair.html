@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}{{chair.title}}{% endblock title %}
+{% block links %}
+<link rel="stylesheet" href="{% static 'chairitems/css/style.css' %}">
+{% endblock links %}
+{% block content %}
+<div class = 'container chair_detail'>
+    <div class = "horisontal_card">
+        <img src={{chair.image.url}} alt="">
+        <div class = "card_right">
+            <h2>{{chair.title}}</h2>
+            <p>description: {{chair.description}}</p>
+            <p>price: {{chair.price}}$</p>
+            <p>owner: {{chair.owner.username}}</p>
+            <p>created at: {{chair.created|date:"d.m.Y H:i:s:u"}}</p>
+            <p>last update: {{chair.updated|date:"d.m.Y H:i:s:u"}}</p>
+        </div>
+    </div>
+    <div class = "reviews">
+        <h2>reviews</h2>
+    </div>
+</div>
+
+
+{% endblock content %}
+
+
+

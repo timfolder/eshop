@@ -1,0 +1,12 @@
+<div class = 'card'>
+    <img src="{{chair.image.url}}" alt="">
+    <div class = 'card-body'>
+        <h3>{{chair.title}}</h3>
+        <p>{{chair.description|truncatewords:10}}</p>
+        <p>${{chair.price}}</p>    
+    </div>
+    <div class = "card-footer">
+        <a>buy</a>
+        <a href="{{ chair.get_absolute_url }}">learn more</a>
+    </div>
+</div>

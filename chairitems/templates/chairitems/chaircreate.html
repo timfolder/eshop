@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}{{chair.title}}{% endblock title %}
+{% block links %}
+<link rel="stylesheet" href="{% static 'chairitems/css/style.css' %}">
+{% endblock links %}
+{% block content %}
+<div class = 'container chair_create'>
+    <h1>CREATE</h1>
+    <form method = "POST" enctype = "multipart/form-data">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button>SUBMIT</button>
+    </form>
+</div>
+
+
+{% endblock content %}
+
+
+
